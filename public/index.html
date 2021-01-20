@@ -20,6 +20,19 @@
         socket.on('mensaje', function(payload){
             console.log('Escuchando: ', payload);
         });
+        socket.on('mensaje', function(payload){
+            console.log('Escuchando: ', payload);
+        });
+        socket.on('nuevo-mensaje', function(payload){
+            console.log('nuevo mensaje:');
+            console.log('nombre: ' + payload['nombre']);
+            console.log('mensaje: ' + payload['mensaje']);
+            //console.log(payload.containsKey('mensaje2')? 'mensaje2: '+payload['mensaje2']:'no hay ni merga perro!');
+        });
+        socket.on('active-bands', function(bands){
+            console.clear();
+            console.table(bands);
+        });
     </script>
 </body>
 </html>
